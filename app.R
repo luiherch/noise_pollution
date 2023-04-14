@@ -16,8 +16,8 @@ library(tidyr)
 library(hrbrthemes)
 library(leaflet)
 library(rsconnect)
-load('data_df.RData')
-load('stations.RData')
+load('data/rdata/data_df.RData')
+load('data/rdata/stations.RData')
 icons <- awesomeIcons(
   icon = 'microphone',
   iconColor = 'black',
@@ -33,7 +33,7 @@ ui <- fluidPage(
   theme = bslib::bs_theme(bootswatch = "united"),
   navbarPage('Noise Pollution',
     tabPanel('Introduction',
-  includeHTML("texto.html"),
+  includeHTML("data/html/texto.html"),
   leafletOutput('map'),
   br(),
   hr()
@@ -142,7 +142,7 @@ ui <- fluidPage(
               tags$li('Creating more green zones')
             )),
   tabPanel('About',
-           includeHTML("texto2.html"))
+           includeHTML("data/html/texto2.html"))
 ))
 
 
